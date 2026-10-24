@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Voltcrate: a demo gaming marketplace with search, filters, wishlist, cart and a mock checkout.">
+<meta name="theme-color" content="#08090D">
+<title>Voltcrate – Gaming Marketplace (Demo)</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="demo-bar">Demo store: sample products and illustrative prices. No real keys are sold and no payments are taken.</div>
+<header class="nav">
+  <a href="#home" class="logo" aria-label="Voltcrate home"><span class="bolt">⚡</span>Volt<b>crate</b></a>
+  <button id="menuBtn" aria-label="Toggle menu" aria-expanded="false">☰</button>
+  <nav id="menu">
+    <a href="#home">Home</a><a href="#market">Marketplace</a><a href="#faq">FAQ</a><a href="#about">About</a><a href="#contact">Contact</a>
+  </nav>
+  <button id="themeBtn" class="cartlink" aria-label="Toggle light/dark theme">◐</button>
+  <a href="#wishlist" class="cartlink" aria-label="Wishlist">♥ <span id="wishCount">0</span></a>
+  <a href="#cart" class="cartlink" aria-label="Cart">🛒 <span id="cartCount">0</span></a>
+</header>
+
+<div id="loader"><span></span></div>
+
+<main id="main">
+  <noscript><p class="warn">This demo store needs JavaScript enabled.</p></noscript>
+  <section class="view" id="home" hidden></section>
+  <section class="view" id="market" hidden></section>
+  <section class="view" id="product" hidden></section>
+  <section class="view" id="wishlist" hidden></section>
+  <section class="view" id="cart" hidden></section>
+  <section class="view" id="checkout" hidden></section>
+  <section class="view" id="done" hidden></section>
+
+  <section class="view page" id="about" hidden>
+    <h1>About Voltcrate</h1>
+    <p>Voltcrate is a front-end demo of a digital gaming marketplace: currencies, keys, subscriptions, gift cards and software. Every product, price and rating here is sample data for design and testing.</p>
+  </section>
+  <section class="view page" id="faq" hidden>
+    <h1>FAQ</h1>
+    <details><summary>Are these products real?</summary><p>No. This is a demo. Nothing here can be redeemed.</p></details>
+    <details><summary>Is my cart saved?</summary><p>Yes, in your browser's localStorage. It is not secure storage and not synced anywhere.</p></details>
+    <details><summary>Can I pay?</summary><p>No. Checkout is a demo and collects no payment details. A real store needs a payment provider and a secure backend.</p></details>
+    <details><summary>Which discount codes work?</summary><p>Demo codes: VOLT10 (10% off), PLAY15 (15% off), WELCOME5 (5% off).</p></details>
+  </section>
+  <section class="view page" id="contact" hidden>
+    <h1>Contact us</h1>
+    <form id="contactForm" novalidate>
+      <label>Name<input name="name" autocomplete="name"></label>
+      <label>Email<input name="email" type="email" autocomplete="email"></label>
+      <label>Message<textarea name="msg" rows="4"></textarea></label>
+      <p class="err" id="contactErr" role="alert"></p>
+      <button class="btn" type="submit">Send message</button>
+    </form>
+    <p class="note">Demo form: messages are not sent anywhere.</p>
+  </section>
+  <section class="view page" id="terms" hidden>
+    <h1>Terms of Service</h1>
+    <p>This demo site offers no real goods or services. Sample content is illustrative only. Any real deployment must replace these terms with ones reviewed by a qualified professional.</p>
+  </section>
+  <section class="view page" id="privacy" hidden>
+    <h1>Privacy Policy</h1>
+    <p>This demo stores your cart, discount code and the details you type only in your own browser (localStorage) and sends nothing to a server. Clear your browser data to remove it.</p>
+  </section>
+</main>
+
+<footer>
+  <span>© Voltcrate demo</span>
+  <a href="#terms">Terms</a><a href="#privacy">Privacy</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
+</footer>
+<div id="toasts" aria-live="polite"></div>
+<script src="script.js"></script>
+</body>
+</html>
